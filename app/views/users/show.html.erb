@@ -1,0 +1,17 @@
+<% if current_user.comments.any? %>
+<div class="col-md-12 text-center welcome-profile">
+  <h1>Welcome <%= current_user.full_name %></h1>
+  <h3>My Blog</h3>
+  <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <!-- comments post -->
+      <%= render 'comments/post' %>
+      <% else %>
+        <div class="col-md-12 text-center empty-profile">
+        <h4>You didn't type any new comments!</h4>
+        <%= link_to "Add New ", new_comments_path %>
+      <% end %>
+    </div>
+  <div class="col-md-3"></div>
+</div>
+</div>
